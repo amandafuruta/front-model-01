@@ -23,17 +23,19 @@ const NavStyle = styled.nav`
         right: 120px;        
         justify-content: start;
     }
+
     .retail{
         background-color: #f28f32;
         z-index: 4;
         right: 60px;        
         justify-content: start;
     }
+
     .community{
         background-color: #91078c;
         z-index: 5;
         right: 0px;        
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .widthNormal{
@@ -45,20 +47,49 @@ const NavStyle = styled.nav`
         display: flex;
         align-items: center;
         height: 0;
-        overflow: hidden;
         position: absolute;
-        cursor: pointer;
         
-        h4{
-            transform: rotate(90deg); 
-            font-size: 20px;
-            color: #fff;
-            font-weight: 400;
+        .title{
+            cursor: pointer;
+            height: 100%;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+
+            h4{            
+                transform: rotate(90deg); 
+                font-size: 20px;
+                color: #fff;
+                font-weight: 400;
+            }
         }
     }
 
     .visible{
         height: 100vh;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .content{        
+        padding: 295px 60px 0px 120px;
+        height: 100%;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .cardContentShow{
+        opacity: 1; 
+        visibility: visible; 
+        transition:visibility 0.3s linear,opacity 0.3s linear;
     }
 
 `
@@ -105,7 +136,7 @@ const Logo = styled.div`
 `
 
 const SectionBanner = styled.section`
-    padding-bottom: 63%;
+    padding-bottom: 55%;
 
     .banner{
         background-image: url('/imagem.png');
@@ -247,7 +278,7 @@ const SectionMap = styled.section`
 
     .card{        
         padding: 1px;
-        max-width: 630px;
+        max-width: 750px;
         height: 339px;
         width: 100%;
 
@@ -298,22 +329,6 @@ const SectionMap = styled.section`
 
 const Footer = styled.footer`
     padding: 60px 60px 30px;
-
-    .becomeVendor{
-        padding: 60px;
-        margin-bottom: 60px;
-        background-image: repeating-linear-gradient(-74deg,rgba(0,0,0,.2),rgba(0,0,0,.2) 1px,transparent 0,transparent 4px),repeating-linear-gradient(-74deg,rgba(0,0,0,.2),rgba(0,0,0,.2) 1px,transparent 0,transparent 4px);
-        background-position: 0 0,0 100%;
-        background-size: 100% 12px,100% 12px;
-        animation: none;
-        background-repeat: repeat-x,repeat-x,repeat-y,repeat-y;
-
-        p{
-            font-size: 45px;
-            text-align: center;
-            margin-bottom: 25px;
-        }
-    }
 
     .socialMedia{ 
         margin-bottom : 60px;
