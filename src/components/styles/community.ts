@@ -6,7 +6,7 @@ const CommunityStyle = styled.div`
     opacity: 0 ;
     flex-direction: column;
 
-    button{
+    .communityButton{
         margin-top: 90px;
         font-size: 17px;
         background-color: transparent;
@@ -15,13 +15,13 @@ const CommunityStyle = styled.div`
         border: 1px solid #fff;
         color: #fff;
         transition: background-color .6s cubic-bezier(.23,1,.32,1),color .6s cubic-bezier(.23,1,.32,1);
-    }
 
-    button:hover{
-        background-color: #000;
-        color: #fff;
-        border-color: #000;
-    } 
+        &:hover{
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+        }
+    }
 
     .top{
         margin-bottom: 190px;
@@ -202,6 +202,10 @@ const CommunityStyle = styled.div`
                     font-weight: 100;
                     color: #fff;
                 }
+
+                span{
+                    color:#fff;
+                }
             }
         }
     }
@@ -223,6 +227,53 @@ const CommunityStyle = styled.div`
             background-position-x: 100px;
         }
     }
+
+    .marketEvent_body{
+        position: relative;
+        padding: 75px 0 100px;
+        background-image: linear-gradient(90deg,#fff 50%,transparent 0),linear-gradient(90deg,#fff 50%,transparent 0),linear-gradient(90deg,#fff 50%,transparent 0),linear-gradient(90deg,#fff 50%,transparent 0);
+        background-position: 0 0,0 100%,left 14px,0 calc(100% - 14px);
+        background-repeat: repeat-x,repeat-x,repeat-x,repeat-x;
+        background-size: 24px 1px,24px 1px,24px 1px,24px 1px;
+        animation: .8s infinite normal c;
+        animation-timing-function: linear;
+        margin-bottom: 120px;
+
+        .informations{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 60px;
+            justify-items: center;
+            
+            .text{
+                max-width: 210px;
+                text-align: center;
+                letter-spacing: 1px;
+                color: #fff;
+            }
+        }
+
+        button{
+            position: absolute;
+            font-size: 17px;
+            width: 180px;
+            padding: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -20px;
+            color: #fff;
+            border: 1px solid #fff;
+            transition: background-color .6s cubic-bezier(.23,1,.32,1),color .6s cubic-bezier(.23,1,.32,1);
+            background-color: #91078C;
+        }
+
+        button:hover{
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+        }
+    }
+ 
 `
 
 export { CommunityStyle }
