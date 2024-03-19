@@ -2,11 +2,9 @@
 
 This is a project based on https://www.frontendpractice.com/projects/canal-street-market
 
-View live example: https://canalstreet.market/
+You can also check this project live on : https://front-model-streetmarket.vercel.app/
 
-
-
-
+------------------------------------------------------------------------------------------------------
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

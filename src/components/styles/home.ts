@@ -117,6 +117,10 @@ const SectionTop = styled.section`
         width: 100%;
         line-height: 86px;
     }
+
+    .h1{
+        opacity: 0;
+    }
 `
 
 const Logo = styled.div`

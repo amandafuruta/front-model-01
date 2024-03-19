@@ -62,10 +62,15 @@ export default function Home() {
         document.querySelector('.food')?.classList.add('visible')
       }, 750)
 
+      const title = setTimeout(() => {
+        document.querySelector('.h1')?.setAttribute('style', 'opacity:1; transition: opacity 1s ease-in-out;')
+      }, 1000)
+
       return () => {
         clearTimeout(timer)
         clearTimeout(timerRetail)
         clearTimeout(timerFood)
+        clearTimeout(title)
       }
     }
 
@@ -90,7 +95,7 @@ export default function Home() {
       <HomeStyle id='homeBody'>
         <div className='body'>
           <SectionTop>
-            <h1 className={playfair_display.className}>Canal Street Market is a carefully curated retail market, food hall & community space open year-round at 265 Canal Street. Support Small Business this weekend!</h1>
+            <h1 className={`${playfair_display.className} h1`}>Canal Street Market is a carefully curated retail market, food hall & community space open year-round at 265 Canal Street. Support Small Business this weekend!</h1>
           </SectionTop>
           <SectionBanner>
             <div className='banner'></div>
