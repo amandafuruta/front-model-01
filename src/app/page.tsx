@@ -1,6 +1,5 @@
 'use client'
 import {
-  NavStyle,
   Logo,
   HomeStyle,
   SectionTop,
@@ -9,64 +8,17 @@ import {
   SectionMarketEvents,
   SectionMap
 } from "@/components/styles/home";
-import { playfair_display, lora, work_sans } from './fonts'
+import { playfair_display, lora } from './fonts'
 import { useEffect, useState } from 'react';
 import Footer from '../components/footer'
-import NavChild from '@/components/navChild';
-import Community from '@/components/community'
 import BecomeVendor from "@/components/becomeVendor";
-import { mockfood, mockRetail } from '@/components/data/mocks';
+import DeskNav from '../components/deskNav'
 
 function callNavItem(idParent: string) {
-  window.history.pushState(null, '-', `/${idParent}`)
-
-  if (idParent == 'food' || idParent == 'retail' || idParent == 'community') {
-    document.querySelector('.body')?.classList.add('hide')
-    document.querySelector(`.logo`)?.classList.add('logoMoved')
-
-  }
-
-  if (idParent == 'food') {
-    // Open menu
-    document.querySelector(`.${idParent}`)?.setAttribute('style', 'transition: 2s; width:calc(100vw - 200px)')
-    document.querySelector(`.retail`)?.setAttribute('style', 'transition: 2s; width:60px')
-    document.querySelector(`.community`)?.setAttribute('style', 'transition: 2s; width:60px')
-
-    // When food page is open
-    setTimeout(() => {
-      document.querySelector(`.topContentFood`)?.classList.add('cardContentShow')
-    }, 1500)
-
-    document.querySelector(`.topContentRetail`)?.classList.remove('cardContentShow')
-    document.querySelector(`.topContentCommunity`)?.classList.remove('cardContentShow')
-
-  } else if (idParent == 'retail') {
-    document.querySelector(`.${idParent}`)?.setAttribute('style', 'transition: 2s; width:calc(100vw - 200px)')
-    document.querySelector(`.food`)?.setAttribute('style', 'transition: 2s; width:calc(100vw - 200px)')
-    document.querySelector(`.community`)?.setAttribute('style', 'transition: 2s; width:60px')
-
-    // When Retail page is open  
-    setTimeout(() => {
-      document.querySelector(`.topContentRetail`)?.classList.add('cardContentShow')
-    }, 1500)
-
-    document.querySelector(`.topContentCommunity`)?.classList.remove('cardContentShow')
-
-
-  } else if (idParent == 'community') {
-    document.querySelector(`.food`)?.setAttribute('style', 'transition: 2s; width:calc(100vw - 200px)')
-    document.querySelector(`.retail`)?.setAttribute('style', 'transition: 2s; width:calc(100vw - 200px)')
-    document.querySelector(`.${idParent}`)?.setAttribute('style', 'transition: 2s; width:calc(100vw - 200px)')
-
-    // When Community page is open  
-    setTimeout(() => {
-      document.querySelector(`.topContentCommunity`)?.classList.add('cardContentShow')
-    }, 1500)
-
-  } else if (idParent == '') {
-    document.querySelector(`.food`)?.setAttribute('style', 'transition: 2s; width:60px')
-    document.querySelector(`.retail`)?.setAttribute('style', 'transition: 2s; width:60px')
-    document.querySelector(`.community`)?.setAttribute('style', 'transition: 2s; width:60px')
+  if (idParent == '') {
+    document.querySelector(`.food`)?.setAttribute('style', 'transition: 1.5s; width:60px')
+    document.querySelector(`.retail`)?.setAttribute('style', 'transition: 1.5s; width:60px')
+    document.querySelector(`.community`)?.setAttribute('style', 'transition: 1.5s; width:60px')
     document.querySelector('.body')?.classList.remove('hide')
     document.querySelector(`.logo`)?.classList.remove('logoMoved')
     document.querySelector(`.logo`)?.setAttribute('style', 'transition: 2s')
@@ -85,7 +37,7 @@ export default function Home() {
   useEffect(() => {
 
     function handleScroll() {
-      if (window.scrollY >= 550 && window.scrollY < 1700) {
+      if (window.scrollY >= 550 && window.scrollY < 1000) {
         document.querySelector('.banner')?.classList.add('visible')
         setState(!state)
       } else if (window.scrollY >= 1800) {
@@ -103,12 +55,12 @@ export default function Home() {
       const timerRetail = setTimeout(() => {
         document.querySelector('.retail')?.setAttribute('style', 'transition: height 1s ease-in-out;')
         document.querySelector('.retail')?.classList.add('visible')
-      }, 600)
+      }, 650)
 
       const timerFood = setTimeout(() => {
         document.querySelector('.food')?.setAttribute('style', 'transition: height 1s ease-in-out;')
         document.querySelector('.food')?.classList.add('visible')
-      }, 700)
+      }, 750)
 
       return () => {
         clearTimeout(timer)
@@ -127,34 +79,7 @@ export default function Home() {
 
   return (
     <>
-      <NavStyle>
-        <div className='stripe food widthNormal' onClick={() => callNavItem('food')}>
-          <div className='title'>
-            <h4 className={work_sans.className}>Food</h4>
-          </div>
-          <div className='content'>
-            <NavChild id='topContentFood' title='The Food Hall' image='localimg3.png' mock={mockfood} />
-          </div>
-        </div>
-
-        <div className='stripe retail widthNormal' onClick={() => callNavItem('retail')}>
-          <div className='title'>
-            <h4 className={work_sans.className}>Retail</h4>
-          </div>
-          <div className='content'>
-            <NavChild id='topContentRetail' title='The Retail Market' image='localimg2.png' mock={mockRetail} />
-          </div>
-        </div>
-
-        <div className='stripe community widthNormal' onClick={() => callNavItem('community')}>
-          <div className='title'>
-            <h4 className={work_sans.className}>Community</h4>
-          </div>
-          <div className='content'>
-            <Community id='topContentCommunity' />
-          </div>
-        </div>
-      </NavStyle>
+      <DeskNav />
       <Logo>
         <div className="logo" onClick={() => callNavItem('')}>
           <svg width="90px" height="90px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">

@@ -276,10 +276,11 @@ const SectionMap = styled.section`
     display: flex;
     justify-content: space-around;
     margin-bottom: 60px;
+    padding: 0 60px;
 
     .card{        
         padding: 1px;
-        max-width: 750px;
+        max-width: 770px;
         height: 339px;
         width: 100%;
 
@@ -298,6 +299,10 @@ const SectionMap = styled.section`
             font-weight: 300;            
             max-width: 385px;
             width: 100%;
+        }
+
+        &:first-child{
+            margin-right: 20px;
         }
     }
 

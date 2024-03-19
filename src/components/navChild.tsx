@@ -96,7 +96,7 @@ export default function NavChild(props: Props) {
                     </div>
                 </div>
             </div>
-            <BecomeVendor color='black' />
+            <BecomeVendor color='black' padding={false} />
         </NavChildStyle>
     )
 }
