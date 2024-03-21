@@ -67,7 +67,16 @@ const BecomeVendorStyle = styled.div`
         background-color: #000;
         color: #fff;
         border-color: #000;
-    }    
+    }   
+    
+    @media (max-width: 474px) {
+        .paddingOn{
+            padding: 20px;
+        }
+        .paddingOff{
+            padding: 20px 0;
+        }
+    }
 `
 
 export { BecomeVendorStyle }

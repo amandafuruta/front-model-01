@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import Footer from '../components/footer'
 import BecomeVendor from "@/components/becomeVendor";
 import DeskNav from '../components/deskNav'
+import NavMobile from '../components/mobileNav'
 
 function callNavItem(idParent: string) {
   if (idParent == '') {
@@ -37,7 +38,7 @@ export default function Home() {
   useEffect(() => {
 
     function handleScroll() {
-      if (window.scrollY >= 550 && window.scrollY < 1000) {
+      if (window.scrollY >= 550 && window.scrollY < 1000 && window.screenX > 760) {
         document.querySelector('.banner')?.classList.add('visible')
         setState(!state)
       } else if (window.scrollY >= 1800) {
@@ -78,6 +79,11 @@ export default function Home() {
       handleOpen()
     }
 
+    if (window.screenX <= 760) {
+      document.querySelector('.banner')?.classList.add('visible')
+      document.querySelector('.typesOfMarket')?.classList.add('visible')
+    }
+
     window.addEventListener("scroll", handleScroll);
 
   }, [state])
@@ -85,6 +91,7 @@ export default function Home() {
   return (
     <>
       <DeskNav />
+      <NavMobile />
       <Logo>
         <div className="logo" onClick={() => callNavItem('')}>
           <svg width="90px" height="90px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
@@ -97,8 +104,10 @@ export default function Home() {
           <SectionTop>
             <h1 className={`${playfair_display.className} h1`}>Canal Street Market is a carefully curated retail market, food hall & community space open year-round at 265 Canal Street. Support Small Business this weekend!</h1>
           </SectionTop>
-          <SectionBanner>
-            <div className='banner'></div>
+          <SectionBanner >
+            <div className='banner'>
+              <img src="/imagem.png" alt="banner" />
+            </div>
           </SectionBanner>
           <SectionTypeOfMarkets>
             <h2 className={playfair_display.className}>A New Kind of Market</h2>

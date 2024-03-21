@@ -87,6 +87,16 @@ const FooterStyle = styled.footer`
             animation-play-state: running;
         }
     }
+
+    @media (max-width: 474px){
+        .socialMedia{
+            grid-template-columns: repeat(1, 1fr);
+
+            .box{
+                margin-bottom: 20px;
+            }
+        }
+    }
 `
 
 export { FooterStyle }

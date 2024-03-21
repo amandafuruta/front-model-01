@@ -1,8 +1,6 @@
 import BecomeVendor from '@/components/becomeVendor'
 import { playfair_display, lora, work_sans } from '../app/fonts'
 import { CommunityStyle } from './styles/community'
-import { useEffect } from 'react'
-import { SectionMarketEvents } from './styles/home'
 import Footer from './footer'
 
 interface Props {
@@ -10,11 +8,7 @@ interface Props {
 }
 
 export default function Community(props: Props) {
-    useEffect(() => {
-        if (window.location.pathname == '/community') {
-            console.log('Community')
-        }
-    })
+
     return (
         <CommunityStyle className={props.id}>
             <div className='top'>
@@ -61,7 +55,7 @@ export default function Community(props: Props) {
                 <div className='featuresPost'>
                     <div className='post'>
                         <div className='imgBox'>
-                            <img src="./feature01.jpg" alt="" />
+                            <img src="./feature01.png" alt="" />
                         </div>
                         <div className='text singleLine'>
                             <span>CSM Community - AMDC</span>

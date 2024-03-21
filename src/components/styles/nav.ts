@@ -92,6 +92,9 @@ const DeskNavStyle = styled.nav`
         transition:visibility 0.3s linear,opacity 0.3s linear;
     }
 
+    @media (max-width: 760px) {
+        display: none;
+    }
 `
 
 export { DeskNavStyle }

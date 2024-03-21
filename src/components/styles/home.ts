@@ -102,6 +102,10 @@ const HomeStyle = styled.main`
     .hide{
         display: none;   
     }
+
+    @media (max-width: 760px) {
+        width: 100%;
+    }
 `
 
 const SectionTop = styled.section`
@@ -120,6 +124,21 @@ const SectionTop = styled.section`
 
     .h1{
         opacity: 0;
+    } 
+
+    @media (max-width: 760px) {
+        h1{
+            font-size: 28px;
+            line-height: 40px;
+        }
+    }
+
+    @media (max-width: 474px) {
+        padding: 200px 20px 120px;
+        h1{
+            font-size: 28px;
+            line-height: 40px;
+        }
     }
 `
 
@@ -140,26 +159,27 @@ const Logo = styled.div`
 `
 
 const SectionBanner = styled.section`
-    padding-bottom: 55%;
 
     .banner{
-        background-image: url('/imagem.png');
-        background-size: cover;
+        overflow: hidden;
+        max-height: 920px;
         height: 100%;
-        width: calc(100% - 180px);
-        position: absolute;  
-        background-position: 50%;
         opacity: 0;   
         transition: opacity 2s; 
+        img{
+            width: 100%;
+            transform: translate(0%, -20%);
+        }
     }    
 
     .visible{
         opacity: 1;  
     }
+
 `
 
 const SectionTypeOfMarkets = styled.section`
-    padding: 60px;
+    padding: 70px 60px 60px;
 
     h2{
         font-size: 113px;
@@ -206,6 +226,32 @@ const SectionTypeOfMarkets = styled.section`
     .visible {
         opacity: 1;
     }
+
+    @media (max-width: 760px) {
+        padding: 0 20px;
+
+        h2{
+            font-size: 65px;
+        }
+
+        .typesOfMarket{
+            grid-template-columns: repeat(1,1fr);
+            .typesOfMarket_content{
+                margin-bottom: 25px;
+                .typesOfMarket_box_img01, .typesOfMarket_box_img02{
+                    padding-bottom: 90%;
+                    background-position-y: bottom;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 474px){
+        h2{
+            font-size: 40px;
+        }
+    }
+    
 `
 
 const SectionMarketEvents = styled.section`
@@ -274,6 +320,26 @@ const SectionMarketEvents = styled.section`
             background-position-x: 24px,-24px;
         }
     }
+
+    @media (max-width: 760px){
+        padding: 60px 20px 150px;
+        h3{
+            font-size: 80px;
+        }
+    }
+
+    @media (max-width: 474px){
+        h3{
+            font-size: 50px;
+        }
+
+        .marketEvent_body{
+            .informations{
+                grid-template-columns: repeat(1, 1fr);
+                grid-row-gap: 50px;
+            }
+        }
+    }
 `
 
 const SectionMap = styled.section`
@@ -311,9 +377,10 @@ const SectionMap = styled.section`
     }
 
     .txt{
-        padding: 90px 0;
+        padding: 90px 10px;
         display: flex;
-        justify-content: center;
+        justify-content: center;        
+        align-items: center;
     }
 
     @keyframes a {
@@ -334,6 +401,39 @@ const SectionMap = styled.section`
         width: 100%;
         background-image: url('/map.png');
         background-size: cover;
+    }
+
+    @media (max-width: 1080px) {
+        .card{
+            p{
+                font-size: 40px; 
+            }
+        }
+    }
+
+    @media (max-width: 840px) {
+        .card{
+            p{
+                font-size: 35px; 
+            }
+        }
+    }
+
+    @media (max-width: 760px) {
+        .card{
+            p{
+                font-size: 28px; 
+            }
+        }
+    }
+
+    @media (max-width: 474px){
+        padding: 0 20px;
+        flex-direction: column;
+
+        .card:first-child{
+            margin-bottom: 20px;
+        }
     }
 `
 export {

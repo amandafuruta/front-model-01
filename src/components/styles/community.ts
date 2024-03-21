@@ -210,21 +210,21 @@ const CommunityStyle = styled.div`
         }
     }
 
-    @keyframes h {
-        0% {
-            transform: translateX( 10vh ) ;
-        }
-        100% {
-            transform: translateX( 0 ) ;            
-        }
-    }
-
     @keyframes g {
         0% {
             background-position-x: 0;
         }
         100% {
             background-position-x: 100px;
+        }
+    }
+
+    @keyframes h {
+        0% {
+            transform: translateX( 10vh ) ;
+        }
+        100% {
+            transform: translateX( 0 ) ;            
         }
     }
 
