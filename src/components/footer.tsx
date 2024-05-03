@@ -1,4 +1,4 @@
-import { FooterStyle } from './styles/footer'
+import { FooterStyle } from '../styles/footer'
 import Link from 'next/link'
 import { lora } from '@/app/fonts'
 

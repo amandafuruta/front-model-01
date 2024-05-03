@@ -340,6 +340,13 @@ const SectionMarketEvents = styled.section`
             }
         }
     }
+    @media (max-width: 360px){
+        h3{
+            font-size: 40px;
+            margin: 0 20px;
+        }
+
+    }
 `
 
 const SectionMap = styled.section`

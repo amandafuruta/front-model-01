@@ -7,7 +7,7 @@ import {
   SectionTypeOfMarkets,
   SectionMarketEvents,
   SectionMap
-} from "@/components/styles/home";
+} from "@/styles/home";
 import { playfair_display, lora } from './fonts'
 import { useEffect, useState } from 'react';
 import Footer from '../components/footer'

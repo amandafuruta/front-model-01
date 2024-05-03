@@ -1,4 +1,4 @@
-import { BecomeVendorStyle } from './styles/becomeVendor'
+import { BecomeVendorStyle } from '../styles/becomeVendor'
 import { playfair_display, lora } from '../app/fonts'
 
 interface Props {

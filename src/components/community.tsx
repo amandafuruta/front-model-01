@@ -1,6 +1,6 @@
 import BecomeVendor from '@/components/becomeVendor'
 import { playfair_display, lora, work_sans } from '../app/fonts'
-import { CommunityStyle } from './styles/community'
+import { CommunityStyle } from '../styles/community'
 import Footer from './footer'
 
 interface Props {

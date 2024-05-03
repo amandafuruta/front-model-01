@@ -1,6 +1,6 @@
 import BecomeVendor from '@/components/becomeVendor'
-import { playfair_display, lora, work_sans } from '../app/fonts'
-import { NavChildStyle } from './styles/navChild'
+import { playfair_display, lora, work_sans } from './fonts'
+import { NavChildStyle } from '../styles/navChild'
 
 function hoverMenuItem(img: string) {
     if (img) {
@@ -20,6 +20,7 @@ interface Props {
     id: string,
     title: string,
     image: string,
+    mobile: boolean,
     mock: Array<{
         category: string,
         product: string,
